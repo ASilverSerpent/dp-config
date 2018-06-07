@@ -1,0 +1,26 @@
+﻿#加密配置
+jasypt:
+    encryptor:
+        password: widemex
+        
+server:
+    tomcat:
+        max-threads: 500
+        min-spare-threads: 50
+
+spring:
+    redis:
+        remote: false
+        host: 127.0.0.1
+        port: 6381
+        password:
+    rabbitmq:
+        host:127.0.0.1
+        port: 5682
+        username: dp
+        password: widemex
+    http:
+        multipart:
+            max-file-size: 1000MB
+            max-request-size: 1000MB
+        
