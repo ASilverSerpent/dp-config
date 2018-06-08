@@ -11,11 +11,11 @@ server:
 spring:
     redis:
         remote: false
-        host: 127.0.0.1
+        host: 149.28.228.185
         port: 6379
         password:
     rabbitmq:
-        host: 127.0.0.1
+        host: 149.28.228.185
         port: 5672
         username: dp
         password: widemex
