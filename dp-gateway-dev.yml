@@ -1,0 +1,61 @@
+﻿server:
+  port: 8004
+
+spring:
+  zipkin:
+    rabbitmq:
+      queue:  zipkin
+    sleuth:
+      sampler:
+        percentage: 0.2
+
+zuul:
+  ribbon:
+    eager-load:
+      enable: true
+      clients: dp-auth,dp-upms
+  ignored-services: '*'
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 10000
+  ratelimit:
+    key-prefix: dp-ratelimite
+    enabled: true
+    repository: redis
+    behind-proxy: true
+    policies:
+      dp-upms:
+        limit: 100
+        quota: 100
+        refresh-interval: 3
+
+security:
+  validate:
+    code: true
+    preview: false
+  sessions: stateless
+  oauth2:
+    client:
+      client-id: dp
+      client-secret: dp
+    resource:
+      loadBalanced: true
+      token-info-uri: ${security.auth.server}/oauth/check-token
+      service-id: dp-gateway
+      jwt:
+        key-uri: ${securit.auth.server}/oauth/token_key #解析jwt令牌所需要的密钥地址
+ignore:
+  urls:
+    - /mobile/**
+    - /auth/**
+    - /admin/code/*
+    - /admin/smsCode/*
+    - /admin/user/info
+    - /admin/userMenu
+    - /swagger-resources/**
+    - /swagger-ui.html
+    - /*/v2/api-docs
+    - /swagger/api-docs
+    - /webjars/**
+  clients:
+    - app
