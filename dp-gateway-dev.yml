@@ -31,7 +31,7 @@ zuul:
 
 security:
   validate:
-    code: true
+    code: false #验证码开关
     preview: false
   sessions: stateless
   oauth2:
@@ -51,7 +51,7 @@ ignore:
     - /admin/code/*
     - /admin/smsCode/*
     - /admin/user/info
-    - /admin/userMenu
+    - /admin/menu/userMenu
     - /swagger-resources/**
     - /swagger-ui.html
     - /*/v2/api-docs
