@@ -24,3 +24,13 @@ spring:
             max-file-size: 1000MB
             max-request-size: 1000MB
         
+# Swagger
+swagger:
+  title: WideMex dp Swagger API
+  description: dp Api Documentation
+  version: 1.0.0
+  termsOfServiceUrl: 
+  contact:
+    name: widemex
+    url: http://widemex.com.cn
+    email: 
