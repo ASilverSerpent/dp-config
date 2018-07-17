@@ -32,7 +32,7 @@ zuul:
 security:
   validate:
     code: false #验证码开关
-    preview: false
+    preview: false #演示环境开关
   sessions: stateless
   oauth2:
     client:
@@ -44,6 +44,18 @@ security:
       service-id: dp-gateway
       jwt:
         key-uri: ${security.auth.server}/oauth/token_key #解析jwt令牌所需要的密钥地址
+
+# Swagger
+swagger:
+  title: WideMex dp Swagger API
+  description: dp Api Documentation
+  version: 1.0.0
+  termsOfServiceUrl:
+  contact:
+    name: widemex
+    url: http://widemex.com.cn
+    email:
+
 ignore:
   urls:
     - /mobile/**
